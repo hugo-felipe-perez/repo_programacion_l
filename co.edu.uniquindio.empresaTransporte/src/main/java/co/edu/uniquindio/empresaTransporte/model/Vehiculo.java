@@ -1,11 +1,11 @@
 package co.edu.uniquindio.empresaTransporte.model;
 
-public class Vehiculo {
+public abstract class Vehiculo {
     private String tamaño;
     private String placa;
     private int modelo;
     private String marca;
-    private int color;
+    private String color;
 
     public Vehiculo() {
     }
@@ -42,11 +42,11 @@ public class Vehiculo {
         this.marca = marca;
     }
 
-    public int getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(int color) {
+    public void setColor(String color) {
         this.color = color;
     }
 }

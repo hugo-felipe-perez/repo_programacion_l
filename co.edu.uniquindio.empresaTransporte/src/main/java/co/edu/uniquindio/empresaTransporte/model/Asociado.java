@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Asociado {
     private String nombre;
-    private int numeroIdentificacion;
+    private String numeroIdentificacion;
     private String email;
-    private int numeroCelular;
-    public List<Vehiculo> listaVehiculosAsociados = new ArrayList<>();
+    private String numeroCelular;
+    private List<Vehiculo> listaVehiculosAsociados = new ArrayList<>();
 
     public Asociado() {
     }
@@ -21,11 +21,11 @@ public class Asociado {
         this.nombre = nombre;
     }
 
-    public int getNumeroIdentificacion() {
+    public String getNumeroIdentificacion() {
         return numeroIdentificacion;
     }
 
-    public void setNumeroIdentificacion(int numeroIdentificacion) {
+    public void setNumeroIdentificacion(String numeroIdentificacion) {
         this.numeroIdentificacion = numeroIdentificacion;
     }
 
@@ -37,11 +37,11 @@ public class Asociado {
         this.email = email;
     }
 
-    public int getNumeroCelular() {
+    public String getNumeroCelular() {
         return numeroCelular;
     }
 
-    public void setNumeroCelular(int numeroCelular) {
+    public void setNumeroCelular(String numeroCelular) {
         this.numeroCelular = numeroCelular;
     }
 
@@ -51,5 +51,8 @@ public class Asociado {
 
     public void setListaVehiculosAsociados(List<Vehiculo> listaVehiculosAsociados) {
         this.listaVehiculosAsociados = listaVehiculosAsociados;
+    }
+    public void añadirVehiculos (Vehiculo vehiculo){
+        listaVehiculosAsociados.add(vehiculo);
     }
 }

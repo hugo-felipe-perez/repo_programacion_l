@@ -5,8 +5,9 @@ import java.util.List;
 
 public class EmpresaTransporte {
     private String nombre;
-    public List<Asociado> listaAsociados = new ArrayList<>();
-    public List<Vehiculo> listaVehiculos = new ArrayList<>();
+    private List<Asociado> listaAsociados = new ArrayList<>();
+    private List<VehiculoCarga> listaVehiculosCarga = new ArrayList<>();
+    private List<VehiculoPasajero> listaVehiculosPasajeros = new ArrayList<>();
 
     public EmpresaTransporte() {
     }
@@ -27,11 +28,28 @@ public class EmpresaTransporte {
         this.listaAsociados = listaAsociados;
     }
 
-    public List<Vehiculo> getListaVehiculos() {
-        return listaVehiculos;
+    public List<VehiculoCarga> getListaVehiculosCarga() {
+        return listaVehiculosCarga;
     }
 
-    public void setListaVehiculos(List<Vehiculo> listaVehiculos) {
-        this.listaVehiculos = listaVehiculos;
+    public void setListaVehiculosCarga(List<VehiculoCarga> listaVehiculosCarga) {
+        this.listaVehiculosCarga = listaVehiculosCarga;
+    }
+
+    public List<VehiculoPasajero> getListaVehiculosPasajeros() {
+        return listaVehiculosPasajeros;
+    }
+
+    public void setListaVehiculosPasajeros(List<VehiculoPasajero> listaVehiculosPasajeros) {
+        this.listaVehiculosPasajeros = listaVehiculosPasajeros;
+    }
+    public void añadirAsociados (Asociado asociado){
+        listaAsociados.add(asociado);
+    }
+    public void añadirVehiculosCarga (VehiculoCarga vehiculo){
+        listaVehiculosCarga.add(vehiculo);
+    }
+    public void añadirVehiculosPasajeros (VehiculoPasajero vehiculo){
+        listaVehiculosPasajeros.add(vehiculo);
     }
 }
