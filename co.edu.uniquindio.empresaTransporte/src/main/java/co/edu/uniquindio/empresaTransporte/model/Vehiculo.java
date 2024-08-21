@@ -1,30 +1,36 @@
 package co.edu.uniquindio.empresaTransporte.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Vehiculo {
 
-    private String tamaño;
     private String placa;
-    private int modelo;
+    private String modelo;
     private String marca;
     private String color;
+    private String numeroChasis;
+
+    private Propietario propietariosAsociado;
+    private List<Propietario> listaPropietariosAsociados = new ArrayList<>();
 
     public Vehiculo() {
     }
 
-    public Vehiculo(String tamaño, String placa, int modelo, String marca, String color) {
-        this.tamaño = tamaño;
+    public Vehiculo(String placa,
+                    String modelo,
+                    String marca,
+                    String color,
+                    String numeroChasis,
+                    Propietario propietariosAsociado,
+                    List<Propietario> listaPropietariosAsociados) {
         this.placa = placa;
         this.modelo = modelo;
         this.marca = marca;
         this.color = color;
-    }
-
-    public String getTamaño() {
-        return tamaño;
-    }
-
-    public void setTamaño(String tamaño) {
-        this.tamaño = tamaño;
+        this.numeroChasis = numeroChasis;
+        this.propietariosAsociado = propietariosAsociado;
+        this.listaPropietariosAsociados = listaPropietariosAsociados;
     }
 
     public String getPlaca() {
@@ -35,11 +41,11 @@ public abstract class Vehiculo {
         this.placa = placa;
     }
 
-    public int getModelo() {
+    public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(int modelo) {
+    public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
@@ -59,14 +65,40 @@ public abstract class Vehiculo {
         this.color = color;
     }
 
+    public String getNumeroChasis() {
+        return numeroChasis;
+    }
+
+    public void setNumeroChasis(String numeroChasis) {
+        this.numeroChasis = numeroChasis;
+    }
+
+    public Propietario getPropietariosAsociado() {
+        return propietariosAsociado;
+    }
+
+    public void setPropietariosAsociado(Propietario propietariosAsociado) {
+        this.propietariosAsociado = propietariosAsociado;
+    }
+
+    public List<Propietario> getListaPropietariosAsociados() {
+        return listaPropietariosAsociados;
+    }
+
+    public void setListaPropietariosAsociados(List<Propietario> listaPropietariosAsociados) {
+        this.listaPropietariosAsociados = listaPropietariosAsociados;
+    }
+
     @Override
     public String toString() {
         return "Vehiculo{" +
-                "tamaño='" + tamaño + '\'' +
-                ", placa='" + placa + '\'' +
-                ", modelo=" + modelo +
+                "placa='" + placa + '\'' +
+                ", modelo='" + modelo + '\'' +
                 ", marca='" + marca + '\'' +
                 ", color='" + color + '\'' +
+                ", numeroChasis='" + numeroChasis + '\'' +
+                ", propietariosAsociado=" + propietariosAsociado +
+                ", listaPropietariosAsociados=" + listaPropietariosAsociados +
                 '}';
     }
 }

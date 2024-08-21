@@ -5,40 +5,47 @@ import java.util.List;
 
 public class Propietario {
 
-    private String nomvre;
-    private int numIdentificacion;
+    private String nombre;
+    private String numIdentificacion;
     private String email;
-    private int numCelular;
+    private int edad;
+    private String numCelular;
+
+    private Vehiculo vehiculoPrincipal;
     private List<Vehiculo> listaVehiculosAsociados = new ArrayList<>();
 
     public Propietario() {
     }
 
-    public Propietario(String nomvre,
-                       int numIdentificacion,
+    public Propietario(String nombre,
+                       String numIdentificacion,
                        String email,
-                       int numCelular,
+                       int edad,
+                       String numCelular,
+                       Vehiculo vehiculoPrincipal,
                        List<Vehiculo> listaVehiculosAsociados) {
-        this.nomvre = nomvre;
+        this.nombre = nombre;
         this.numIdentificacion = numIdentificacion;
         this.email = email;
+        this.edad = edad;
         this.numCelular = numCelular;
+        this.vehiculoPrincipal = vehiculoPrincipal;
         this.listaVehiculosAsociados = listaVehiculosAsociados;
     }
 
-    public String getNomvre() {
-        return nomvre;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNomvre(String nomvre) {
-        this.nomvre = nomvre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public int getNumIdentificacion() {
+    public String getNumIdentificacion() {
         return numIdentificacion;
     }
 
-    public void setNumIdentificacion(int numIdentificacion) {
+    public void setNumIdentificacion(String numIdentificacion) {
         this.numIdentificacion = numIdentificacion;
     }
 
@@ -50,12 +57,28 @@ public class Propietario {
         this.email = email;
     }
 
-    public int getNumCelular() {
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getNumCelular() {
         return numCelular;
     }
 
-    public void setNumCelular(int numCelular) {
+    public void setNumCelular(String numCelular) {
         this.numCelular = numCelular;
+    }
+
+    public Vehiculo getVehiculoPrincipal() {
+        return vehiculoPrincipal;
+    }
+
+    public void setVehiculoPrincipal(Vehiculo vehiculoPrincipal) {
+        this.vehiculoPrincipal = vehiculoPrincipal;
     }
 
     public List<Vehiculo> getListaVehiculosAsociados() {
@@ -69,10 +92,12 @@ public class Propietario {
     @Override
     public String toString() {
         return "Propietario{" +
-                "nomvre='" + nomvre + '\'' +
-                ", numIdentificacion=" + numIdentificacion +
+                "nombre='" + nombre + '\'' +
+                ", numIdentificacion='" + numIdentificacion + '\'' +
                 ", email='" + email + '\'' +
-                ", numCelular=" + numCelular +
+                ", edad='" + edad + '\'' +
+                ", numCelular='" + numCelular + '\'' +
+                ", vehiculoPrincipal=" + vehiculoPrincipal +
                 ", listaVehiculosAsociados=" + listaVehiculosAsociados +
                 '}';
     }
