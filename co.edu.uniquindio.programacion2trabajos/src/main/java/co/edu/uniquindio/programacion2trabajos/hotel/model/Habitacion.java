@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Habitacion {
 
-    private Double numero;
+    private String numero;
     private Double precio;
     private Reserva reservaAsociada;
     private List<Servicio> listaServiciosAsociados = new ArrayList<>();
@@ -14,7 +14,7 @@ public class Habitacion {
     public Habitacion() {
     }
 
-    public Habitacion(Double numero,
+    public Habitacion(String numero,
                       Double precio,
                       Reserva reservaAsociada,
                       List<Servicio> listaServiciosAsociados,
@@ -26,11 +26,11 @@ public class Habitacion {
         this.listaServiciosHabitacionAsociados = listaServiciosHabitacionAsociados;
     }
 
-    public Double getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(Double numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 

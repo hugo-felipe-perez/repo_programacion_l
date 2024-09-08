@@ -1,5 +1,6 @@
 package co.edu.uniquindio.programacion2trabajos.hotel.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,8 @@ public class Hotel {
     private List<Cliente> listaClientes = new ArrayList<>();
     private List<Servicio> listaServicios = new ArrayList<>();
 
-    public Hotel() {
+    public Hotel(String nombre) {
+        this.nombre = nombre;
     }
 
     public Hotel(String nombre,
@@ -75,5 +77,33 @@ public class Hotel {
                 ", listaClientes=" + listaClientes +
                 ", listaServicios=" + listaServicios +
                 '}';
+    }
+
+    public Cliente crearCliente (String nombre,String DNI){
+
+        Cliente cliente = new Cliente();
+        cliente.setNombre(nombre);
+        cliente.setDNI(DNI);
+        getListaClientes().add(cliente);
+
+        return cliente;
+    }
+
+    public Reserva crearReserva (LocalDate fechaEntrada, LocalDate fechaSalida){
+
+        Reserva reserva = new Reserva();
+        reserva.setFechaEntrada(fechaEntrada);
+        reserva.setFechaSalida(fechaSalida);
+        getListaReservas().add(reserva);
+
+        return reserva;
+    }
+
+    public void asociarReservaCliente (Reserva reserva,Cliente cliente){
+        cliente.getListaReservasActivas().add(reserva);
+    }
+
+    public void asociarReservaHabitacion (Reserva reserva,Habitacion habitacion){
+        habitacion.setReservaAsociada(reserva);
     }
 }
